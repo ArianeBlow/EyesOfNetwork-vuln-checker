@@ -113,7 +113,7 @@ fi
 }
 
 #check sessid Brut-Force
-Brut-sessid()
+brutt()
 {
 echo ""
 echo "[-] Check if the cookie SESSID is vulnerable"
@@ -133,7 +133,7 @@ sqli_check
 banner
 API_Version_Identifier
 banner
-Brut-sessid
+brutt
 banner
 rm -rf $logfile
 
